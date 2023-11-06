@@ -1,7 +1,7 @@
 import { readonly, writable } from "svelte/store";
+import { persisted } from 'svelte-persisted-store';
 
-
-const items = writable({});
+const items = persisted('cart.items' , {});
 
 export function addToCart( title , variant) {
     const productData = {title: title , ...variant};
